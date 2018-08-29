@@ -6,6 +6,12 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AppRoutingModule } from './modules/app-routing.module';
+import { ModsComponent } from './components/mods/mods.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { PipboyProfileComponent } from './components/pipboy-profile/pipboy-profile.component';
 
 @NgModule({
 	imports: [
@@ -13,10 +19,15 @@ import { environment } from '../environments/environment';
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule, // imports firebase/firestore, only needed for database features
 		AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-		AngularFireStorageModule // imports firebase/storage only needed for storage features
+		AngularFireStorageModule, AppRoutingModule // imports firebase/storage only needed for storage features
 	],
 	declarations: [
-		AppComponent
+		AppComponent,
+		HeaderComponent,
+		FooterComponent,
+		ModsComponent,
+		ChartsComponent,
+		PipboyProfileComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent]
